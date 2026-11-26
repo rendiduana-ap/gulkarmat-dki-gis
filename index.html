@@ -249,6 +249,9 @@
       background: #0f172a;
     }
 
+    .tactical-dark-tiles {
+      filter: invert(100%) hue-rotate(180deg) brightness(92%) contrast(92%) saturate(85%);
+    }
     /* BASEMAP SWITCHER */
     .basemap-bar {
       position: absolute;
@@ -908,9 +911,10 @@
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap'
       });
-      const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      const cartoDark = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; CARTO'
+        attribution: '&copy; OpenStreetMap (Mode Taktis)',
+        className: 'tactical-dark-tiles'
       });
 
       const hybridGroup = L.layerGroup([esriSat, esriLabels]);
